@@ -157,17 +157,15 @@ Yields:
 ### `Code`
 
 `Code` ([`Text`][text]) occurs at block level (see
-[`InlineCode`][inlinecode] for code spans).  `Code` supports an
-info string and a language tag (when the line with the opening fence
-contains some text, it is stored as the info string, the first word
-following the fence is stored as the language tag, the rest of the
-line is stored as the info string, both are null if missing)
+[`InlineCode`][inlinecode] for code spans).  `Code` supports the info string
+syntax, the first word following the fence is stored as the language tag,
+the rest of the line is stored as the meta tag, both are null if missing)
 
 ```idl
 interface Code <: Text {
   type: "code";
   lang: string | null;
-  info: string | null;
+  meta: string | null;
 }
 ```
 
